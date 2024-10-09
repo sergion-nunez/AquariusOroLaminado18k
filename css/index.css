@@ -1,0 +1,18 @@
+.header-inicio {
+    background-color: whitesmoke;
+}
+
+.barra img {
+    width: 150px;
+}
+
+.mobile-menu {
+    width: 30px;
+    display: flex;
+
+}
+
+a {
+    text-decoration: none;
+
+}
