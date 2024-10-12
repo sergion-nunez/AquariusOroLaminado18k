@@ -1,18 +1,214 @@
+/* Estilos Generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
 .header-inicio {
     background-color: whitesmoke;
 }
 
-.barra img {
-    width: 150px;
-}
-
+/* Menú Hamburguesa */
 .mobile-menu {
     width: 30px;
+}
+
+.derecha {
+    width: 100%;
+    position: relative;
+}
+
+/* Navegación */
+.navegacion {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: white;
+    padding: 10px;
+    width: 100%;
+}
+.navegacion a {
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 5px 10px;
+    text-decoration: none;
+    color: black;
+    transition: all 0.4s ease;
+}
+.navegacion a:hover {
+    color: #efb810;
+    transform: translate(-2px); /* hace como un desvanecido cuando pasamos por los enlaces*/
+}
+
+/* Navegación Responsive */
+@media (max-width: 768px) {
+    .navegacion {
+        flex-direction: column;
+    }
+
+    .navegacion a {
+        margin: 5px 0;
+    }
+}
+
+h1 {
+    text-align: center;
+    margin-top: 6%;
+}
+
+.contenedor, .contenido-principal  {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+@media (min-width: 768px) {
+    .contenido-principal {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+    }
+}
+
+
+/* INICIO: imagen grande de entrada */
+.entrada {
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.entrada__imagen {
+    width: 100%;
+    height: 100%;
+}
+
+.entrada__imagen img {
+    width: 100rem;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%; /* Ajusta el 40% para mover la imagen hacia arriba o abajo */
+    padding: 0 40px;
 
 }
 
-a {
-    text-decoration: none;
+.texto-imagen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 90%;
+    max-width: 600px;
+}
 
+.texto-imagen h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para mejorar legibilidad */
+}
+
+.btn-joyas {
+    background-color: #d4af37; /* Color dorado para el botón */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.btn-joyas:hover {
+    background-color: #b8860b; /* Un dorado más oscuro para el hover */
+}
+
+/* Media query para tablets */
+@media (max-width: 1024px) {
+    .entrada {
+        height: 80vh; /* Ajusta para tablets si es necesario */
+    }
+
+    .texto-imagen h3 {
+        font-size: 2rem;
+    }
+
+    .btn-joyas {
+        font-size: 1.2rem;
+        padding: 12px 24px;
+    }
+}
+
+/* Media query para hacer el diseño responsive */
+@media (max-width: 768px) {
+    .entrada {
+        height: 70vh;
+    }
+    .texto-imagen h3 {
+        font-size: 1.7rem;
+    }
+
+    .btn-joyas {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+/* CIERRE: Imagen de entrada (la grande) con botones y texto */
+
+
+/* JOYAS */
+.joyas-entrada {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    margin-top: 40px;
+    
+}
+
+.joyas {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    align-items: center;
+    width: 382px;
+}
+
+.joyas img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (min-width: 768px) {
+    .joyas-entrada {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .entrada {
+        height: 70vh;
+    }
+    .joyas-entrada {
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 1200) {
+    .contenido-principal {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 }
